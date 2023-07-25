@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b28a1415-895c-4ed2-8bc6-11cc7fc72c49": {
+      "ProjectGuid": "b28a1415-895c-4ed2-8bc6-11cc7fc72c49",
+      "DisplayName": "Photo_Redactor",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo_Redactor", "Photo_Redactor\Photo_Redactor.csproj", "{B28A1415-895C-4ED2-8BC6-11CC7FC72C49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{1D2B3CF2-AEA9-44E1-B344-C67E589D2DCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B28A1415-895C-4ED2-8BC6-11CC7FC72C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28A1415-895C-4ED2-8BC6-11CC7FC72C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B28A1415-895C-4ED2-8BC6-11CC7FC72C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B28A1415-895C-4ED2-8BC6-11CC7FC72C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2B3CF2-AEA9-44E1-B344-C67E589D2DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2B3CF2-AEA9-44E1-B344-C67E589D2DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2B3CF2-AEA9-44E1-B344-C67E589D2DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2B3CF2-AEA9-44E1-B344-C67E589D2DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63EA3E28-C584-4D39-9179-E7F51A235568}
+	EndGlobalSection
+EndGlobal

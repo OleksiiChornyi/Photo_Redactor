@@ -1,0 +1,64 @@
+﻿<Window x:Class="Photo_Redactor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Photo_Redactor"
+        mc:Ignorable="d"
+        Title="Photo Redactor" Height="660" Width="985.4" Background="#FF000014" Icon="Adobe-Pr-icon.png" KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+    <Grid x:Name="Grid1" Background="#FF88F3F3" MouseLeftButtonUp="Grid1_MouseLeftButtonUp" MouseLeftButtonDown="Grid1_MouseLeftButtonDown" MouseMove="Grid1_MouseMove">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="450" Margin="9,147,0,0" VerticalAlignment="Top" Width="450" Grid.ColumnSpan="2">
+            <Image x:Name="im1" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="450" OpacityMask="Black" Source="Load.jpg" Margin="0,0,0,0"/>
+        </Border>
+        <Button Content="Открыть" HorizontalAlignment="Left" Margin="14,6,0,0" VerticalAlignment="Top" Width="100" Height="45" Background="#FFDDDDDD" Click="Button_open_Click"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="14,64,0,0" VerticalAlignment="Top" Width="100" Height="45" Click="Button_save_Click"/>
+        <Label x:Name="label1" Content="Для увеличения и&#xD;&#xA;уменьшения нужно&#xD;&#xA;зажать клавишу ctrl и &#xD;&#xA;покрутить колёсико мыши" Margin="614,51,177.8,0" VerticalAlignment="Top" Height="80"/>
+        <Label x:Name="label2" Content="Для обрезки изображения&#xA;просто выделите нужную&#xA;облать, зажав клавишу Ctrl&#xD;&#xA;и она будет обрезана!" HorizontalAlignment="Left" Margin="792,51,0,0" VerticalAlignment="Top" Height="72" Width="157"/>
+        <Border x:Name="Border3" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="450" Margin="499,147,0,0" VerticalAlignment="Top" Width="450" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+            <Border x:Name="Border2" BorderThickness="1" HorizontalAlignment="Left" Height="450" Margin="-1,-1,0,0" VerticalAlignment="Top" Width="450" RenderTransformOrigin="0.5,0.5" MouseLeftButtonUp="Border2_MouseLeftButtonUp">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Image x:Name="im2" HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="450" Source="Load.jpg" Margin="0,0,0,0" PreviewMouseWheel="im2_PreviewMouseWheel" MouseLeftButtonDown="im2_MouseLeftButtonDown" ClipToBounds="True" MouseLeftButtonUp="im2_MouseLeftButtonUp" MouseMove="im2_MouseMove"/>
+            </Border>
+        </Border>
+        <Button x:Name="Button11" Content="Изменить пиксельный формат" HorizontalAlignment="Left" Margin="545,1,0,0" VerticalAlignment="Top" Width="180" Click="Button_change_pixel_format_Click" Height="45"/>
+        <ComboBox x:Name="cmbbox" HorizontalAlignment="Left" Margin="730,1,0,0" VerticalAlignment="Top" Width="198" SelectedIndex="0">
+            <TextBlock>24 бит на пикслель</TextBlock>
+            <TextBlock>16 бит на пикслель</TextBlock>
+            <TextBlock>8 бит на пиксель</TextBlock>
+            <TextBlock>4 бит на пикслель</TextBlock>
+            <TextBlock>1 бит на пиксель</TextBlock>
+        </ComboBox>
+        <Border x:Name="border_cut" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="0" Margin="523,186,0,0" VerticalAlignment="Top" Width="0" />
+        <Slider x:Name="Slider_rotate" HorizontalAlignment="Left" Margin="121,28,0,0" VerticalAlignment="Top" Width="130" ValueChanged="Slider_rot_ValueChanged" Interval="1" Maximum="360"/>
+        <Label Content="Поворот" HorizontalAlignment="Left" Margin="148,1,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Slider x:Name="Slider_skew" HorizontalAlignment="Left" Margin="260,28,0,0" VerticalAlignment="Top" Width="130" ValueChanged="Slider_skew_ValueChanged" Maximum="180" Interval="1"/>
+        <Label Content="Скосить" HorizontalAlignment="Left" Margin="284,1,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Slider x:Name="Slider_scale" HorizontalAlignment="Left" Margin="399,28,0,0" VerticalAlignment="Top" Width="130" Interval="1" Maximum="25" ValueChanged="Slider_scale_ValueChanged"/>
+        <Label Content="Масштабирование" HorizontalAlignment="Left" Margin="399,1,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name ="label_size_im2" Content="" HorizontalAlignment="Left" Margin="499,595,0,0" VerticalAlignment="Top"/>
+        <Label x:Name ="label_size_im1" Content="" HorizontalAlignment="Left" Margin="9,595,0,0" VerticalAlignment="Top"/>
+        <Label Content="Коефициент масштабирования = " HorizontalAlignment="Left" Margin="370,51,0,0" VerticalAlignment="Top"/>
+        <Label Content="Угол поворота = " HorizontalAlignment="Left" Margin="117,51,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_time" Content="Время преобразования = 0 milliseconds" HorizontalAlignment="Left" Margin="725,25,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label x:Name="label_rotate" Content="0°" HorizontalAlignment="Left" Margin="213,51,0,0" VerticalAlignment="Top"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="260,77,0,0" VerticalAlignment="Top"/>
+        <Label Content="Угол скоса = " HorizontalAlignment="Left" Margin="260,51,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_skew" Content="0°" HorizontalAlignment="Left" Margin="334,51,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_scale" Content="1" HorizontalAlignment="Left" Margin="558,51,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
